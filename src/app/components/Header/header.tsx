@@ -1,8 +1,8 @@
-// components/Header.js
+/*eslint no-unused-vars*/
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function Header({ title, navLinks, user }) {
+export default function Header({ title, navLinks, user }: { title: any, navLinks: any, user: any }) {
   const [isOpen, setIsOpen] = useState(false);
 
   // Toggle for mobile menu
@@ -20,7 +20,7 @@ export default function Header({ title, navLinks, user }) {
           </div>
 
           <nav className="hidden md:flex space-x-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link:any) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -30,12 +30,8 @@ export default function Header({ title, navLinks, user }) {
               </a>
             ))}
           </nav>
-
-
         </div>
       </div>
-
-
     </header>
   );
 }

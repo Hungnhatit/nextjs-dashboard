@@ -7,7 +7,7 @@ export default function ProductionList({ products }) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
-  const filteredProducts = products.filter((product) =>
+  const filteredProducts = products.filter((product: any) =>
     product.productName.toLowerCase().includes(searchQuery.toLowerCase()) ||
     product.productBrand.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -19,7 +19,7 @@ export default function ProductionList({ products }) {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = filteredProducts.slice(startIndex, endIndex);
 
-  const handlePageChange = (newPage) => {
+  const handlePageChange = (newPage: any) => {
     if (newPage >= 1 && newPage <= totalPages) {
       setCurrentPage(newPage);
     }
@@ -27,7 +27,6 @@ export default function ProductionList({ products }) {
 
   return (
     <div className="p-4">
-      {/* product table */}
       <table className="min-w-full table-auto bg-white border">
         <thead>
           <tr className="bg-[#162e4e]">
@@ -41,7 +40,7 @@ export default function ProductionList({ products }) {
         </thead>
         <tbody>
           {currentItems.length > 0 ? (
-            currentItems.map((product, index) => (
+            currentItems.map((product: any, index: any) => (
               <tr key={index} className="hover:bg-gray-100 cursor-pointer">
                 <td className="border px-4 py-2">{startIndex + index + 1}</td>
                 <td className="border px-4 py-2">{product.productName}</td>
