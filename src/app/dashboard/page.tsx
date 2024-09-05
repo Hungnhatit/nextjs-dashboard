@@ -1,6 +1,5 @@
 'use client'
 import Header from "../components/Header/header";
-import ProductionList from "../components/Production/Production";
 import Search from "../components/Search/search";
 
 export default function Dashboard() {
@@ -71,7 +70,7 @@ export default function Dashboard() {
     <div className="h-screen w-full bg-slate-100 text-black">
       <Header title="Dashboard" navLinks={navLinks} user={user}></Header>
       <Search></Search>
-      <ProductionList products={productions}></ProductionList>
+     
     </div>
   )
 }
